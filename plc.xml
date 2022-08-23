@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project xmlns:ns1="http://www.plcopen.org/xml/tc6.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
+  <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2022-08-23T17:04:06"/>
+  <contentHeader name="Unnamed" modificationDateTime="2022-08-23T17:33:50">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="10" y="10"/>
+      </fbd>
+      <ld>
+        <scaling x="10" y="10"/>
+      </ld>
+      <sfc>
+        <scaling x="10" y="10"/>
+      </sfc>
+    </coordinateInfo>
+  </contentHeader>
+  <types>
+    <dataTypes/>
+    <pous>
+      <pou name="Hello_World" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="Start_PB" address="%I0.0">
+              <type>
+                <BOOL/>
+              </type>
+              <initialValue>
+                <simpleValue value="FALSE"/>
+              </initialValue>
+              <documentation>
+                <xhtml:p><![CDATA[Start Push Button]]></xhtml:p>
+              </documentation>
+            </variable>
+            <variable name="Stop_PB" address="%I0.1">
+              <type>
+                <BOOL/>
+              </type>
+              <initialValue>
+                <simpleValue value="FALSE"/>
+              </initialValue>
+              <documentation>
+                <xhtml:p><![CDATA[Stop Push Button]]></xhtml:p>
+              </documentation>
+            </variable>
+            <variable name="Motor_Starter" address="%Q0.0">
+              <type>
+                <BOOL/>
+              </type>
+              <initialValue>
+                <simpleValue value="FALSE"/>
+              </initialValue>
+              <documentation>
+                <xhtml:p><![CDATA[Soft Motor Starter]]></xhtml:p>
+              </documentation>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <LD>
+            <leftPowerRail localId="1" height="40" width="10">
+              <position x="80" y="190"/>
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20"/>
+              </connectionPointOut>
+            </leftPowerRail>
+            <contact localId="2" height="20" width="21" negated="false">
+              <position x="220" y="200"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="1">
+                  <position x="220" y="210"/>
+                  <position x="90" y="210"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>Start_PB</variable>
+            </contact>
+            <contact localId="3" height="20" width="21" negated="true">
+              <position x="540" y="200"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="2">
+                  <position x="540" y="210"/>
+                  <position x="241" y="210"/>
+                </connection>
+                <connection refLocalId="7">
+                  <position x="540" y="210"/>
+                  <position x="310" y="210"/>
+                  <position x="310" y="290"/>
+                  <position x="241" y="290"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>Stop_PB</variable>
+            </contact>
+            <rightPowerRail localId="4" height="40" width="10">
+              <position x="810" y="190"/>
+              <connectionPointIn>
+                <relPosition x="0" y="20"/>
+                <connection refLocalId="5">
+                  <position x="810" y="210"/>
+                  <position x="690" y="210"/>
+                </connection>
+              </connectionPointIn>
+            </rightPowerRail>
+            <coil localId="5" height="20" width="21" negated="false">
+              <position x="670" y="200"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="3">
+                  <position x="670" y="210"/>
+                  <position x="561" y="210"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>Motor_Starter</variable>
+            </coil>
+            <comment localId="6" height="110" width="770">
+              <position x="40" y="30"/>
+              <content>
+                <xhtml:p><![CDATA[Program: Hello World
+Programming Language: Ladder Logic Diagram on Open PLC Editor
+Author: Andi Sama
+Created: August 23, 2022]]></xhtml:p>
+              </content>
+            </comment>
+            <contact localId="7" height="20" width="21" negated="true">
+              <position x="220" y="280"/>
+              <connectionPointIn>
+                <relPosition x="0" y="10"/>
+                <connection refLocalId="1">
+                  <position x="220" y="290"/>
+                  <position x="150" y="290"/>
+                  <position x="150" y="210"/>
+                  <position x="90" y="210"/>
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="21" y="10"/>
+              </connectionPointOut>
+              <variable>Motor_Starter</variable>
+            </contact>
+          </LD>
+        </body>
+        <documentation>
+          <xhtml:p><![CDATA[Hello World with Ladder Logic Diagram]]></xhtml:p>
+        </documentation>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="Config0">
+        <resource name="Res0">
+          <task name="task0" priority="0" interval="T#20ms">
+            <pouInstance name="instance0" typeName="Hello_World"/>
+          </task>
+        </resource>
+      </configuration>
+    </configurations>
+  </instances>
+</project>
