@@ -99,7 +99,7 @@ PROGRAM Hello_World
     Motor_Starter : BOOL := FALSE;
   END_VAR
 
-  Motor_Starter := NOT(Stop_PB) AND (NOT(Motor_Starter) OR Start_PB);
+  Motor_Starter := NOT(Stop_PB) AND (Motor_Starter OR Start_PB);
 END_PROGRAM
 
 

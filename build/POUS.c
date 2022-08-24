@@ -210,7 +210,7 @@ void HELLO_WORLD_init__(HELLO_WORLD *data__, BOOL retain) {
 void HELLO_WORLD_body__(HELLO_WORLD *data__) {
   // Initialise TEMP variables
 
-  __SET_VAR(data__->,MOTOR_STARTER,,(!(__GET_VAR(data__->STOP_PB,)) && (!(__GET_VAR(data__->MOTOR_STARTER,)) || __GET_VAR(data__->START_PB,))));
+  __SET_VAR(data__->,MOTOR_STARTER,,(!(__GET_VAR(data__->STOP_PB,)) && (__GET_VAR(data__->MOTOR_STARTER,) || __GET_VAR(data__->START_PB,))));
 
   goto __end;
 

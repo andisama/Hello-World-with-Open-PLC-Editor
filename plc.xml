@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<project xmlns:ns1="http://www.plcopen.org/xml/tc6.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
+<project xmlns:ns1="http://www.plcopen.org/xml/tc6_0201" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2022-08-23T17:04:06"/>
-  <contentHeader name="Unnamed" modificationDateTime="2022-08-23T17:33:50">
+  <contentHeader name="Unnamed" modificationDateTime="2022-08-24T12:04:19">
     <coordinateInfo>
       <fbd>
         <scaling x="10" y="10"/>
@@ -58,18 +58,18 @@
         <body>
           <LD>
             <leftPowerRail localId="1" height="40" width="10">
-              <position x="80" y="190"/>
+              <position x="80" y="210"/>
               <connectionPointOut formalParameter="">
                 <relPosition x="10" y="20"/>
               </connectionPointOut>
             </leftPowerRail>
             <contact localId="2" height="20" width="21" negated="false">
-              <position x="220" y="200"/>
+              <position x="220" y="220"/>
               <connectionPointIn>
                 <relPosition x="0" y="10"/>
                 <connection refLocalId="1">
-                  <position x="220" y="210"/>
-                  <position x="90" y="210"/>
+                  <position x="220" y="230"/>
+                  <position x="90" y="230"/>
                 </connection>
               </connectionPointIn>
               <connectionPointOut>
@@ -78,18 +78,18 @@
               <variable>Start_PB</variable>
             </contact>
             <contact localId="3" height="20" width="21" negated="true">
-              <position x="540" y="200"/>
+              <position x="540" y="220"/>
               <connectionPointIn>
                 <relPosition x="0" y="10"/>
                 <connection refLocalId="2">
-                  <position x="540" y="210"/>
-                  <position x="241" y="210"/>
+                  <position x="540" y="230"/>
+                  <position x="241" y="230"/>
                 </connection>
                 <connection refLocalId="7">
-                  <position x="540" y="210"/>
-                  <position x="310" y="210"/>
+                  <position x="540" y="230"/>
+                  <position x="310" y="230"/>
                   <position x="310" y="290"/>
-                  <position x="241" y="290"/>
+                  <position x="240" y="290"/>
                 </connection>
               </connectionPointIn>
               <connectionPointOut>
@@ -98,22 +98,22 @@
               <variable>Stop_PB</variable>
             </contact>
             <rightPowerRail localId="4" height="40" width="10">
-              <position x="810" y="190"/>
+              <position x="810" y="210"/>
               <connectionPointIn>
                 <relPosition x="0" y="20"/>
                 <connection refLocalId="5">
-                  <position x="810" y="210"/>
-                  <position x="690" y="210"/>
+                  <position x="810" y="230"/>
+                  <position x="691" y="230"/>
                 </connection>
               </connectionPointIn>
             </rightPowerRail>
             <coil localId="5" height="20" width="21" negated="false">
-              <position x="670" y="200"/>
+              <position x="670" y="220"/>
               <connectionPointIn>
                 <relPosition x="0" y="10"/>
                 <connection refLocalId="3">
-                  <position x="670" y="210"/>
-                  <position x="561" y="210"/>
+                  <position x="670" y="230"/>
+                  <position x="561" y="230"/>
                 </connection>
               </connectionPointIn>
               <connectionPointOut>
@@ -121,28 +121,29 @@
               </connectionPointOut>
               <variable>Motor_Starter</variable>
             </coil>
-            <comment localId="6" height="110" width="770">
+            <comment localId="6" height="130" width="770">
               <position x="40" y="30"/>
               <content>
                 <xhtml:p><![CDATA[Program: Hello World
 Programming Language: Ladder Logic Diagram on Open PLC Editor
 Author: Andi Sama
-Created: August 23, 2022]]></xhtml:p>
+Created: August 23, 2022
+Modified: August 24, 2022]]></xhtml:p>
               </content>
             </comment>
-            <contact localId="7" height="20" width="21" negated="true">
+            <contact localId="7" height="20" width="20" negated="false">
               <position x="220" y="280"/>
               <connectionPointIn>
                 <relPosition x="0" y="10"/>
                 <connection refLocalId="1">
                   <position x="220" y="290"/>
                   <position x="150" y="290"/>
-                  <position x="150" y="210"/>
-                  <position x="90" y="210"/>
+                  <position x="150" y="230"/>
+                  <position x="90" y="230"/>
                 </connection>
               </connectionPointIn>
               <connectionPointOut>
-                <relPosition x="21" y="10"/>
+                <relPosition x="20" y="10"/>
               </connectionPointOut>
               <variable>Motor_Starter</variable>
             </contact>
